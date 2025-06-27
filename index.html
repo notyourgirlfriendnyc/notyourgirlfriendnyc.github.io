@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Your Girlfriend - Rock Band</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fixed Navigation Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <h1>Not Your Girlfriend</h1>
+            </div>
+            <ul class="nav__menu">
+                <li><a href="#bio" class="nav__link">Bio</a></li>
+                <li><a href="#tour" class="nav__link">Tour</a></li>
+                <li><a href="#media" class="nav__link">Media</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+                <li>
+                    <a href="https://instagram.com/notyourgirlfriendnyc" target="_blank" class="nav__social">
+                        📷 @NOTYOURGIRLFRIENDNYC
+                    </a>
+                </li>
+            </ul>
+            <button class="nav__toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">Not Your Girlfriend</h1>
+            <p class="hero__subtitle">NYC-based 🎶 covers & originals</p>
+            <a href="#tour" class="btn btn--primary btn--lg">See Tour Dates</a>
+        </div>
+        <div class="hero__overlay"></div>
+    </section>
+
+    <!-- Bio Section -->
+    <section class="bio section" id="bio">
+        <div class="container">
+            <h2 class="section__title">About the Band</h2>
+            <div class="bio__content">
+                <div class="bio__text">
+                    <p>Not Your Girlfriend
+                        NYC-based 🎶 covers & originals
+                        @erin.grace.kelly @dominic_s_bdd
+                        @eric.robertb @ormsbro</p>
+                </div>
+                <div class="bio__image">
+                    <div class="bio__image-placeholder">
+                        <span><img src="band2.jpeg" alt="Not Your Girlfriend - Media 1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Section -->
+    <section class="tour section" id="tour">
+        <div class="container">
+            <h2 class="section__title">Tour Dates</h2>
+            <div class="tour__grid" id="tourGrid">
+                <!-- Tour dates will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section class="media section" id="media">
+        <div class="container">
+            <h2 class="section__title">Media</h2>
+            <div class="media__grid">
+                <div class="media__item media__photo">
+                    <img src="hero.jpg" alt="Not Your Girlfriend - Media 1">
+                    <div class="media__overlay">
+                        <span>Not Your Girlfriend - Media 1</span>
+                    </div>
+                </div>
+                <div class="media__item media__photo">
+                    <img src="band2.jpeg" alt="Not Your Girlfriend - Media 2">
+                    <div class="media__overlay">
+                        <span>Not Your Girlfriend - Media 2</span>
+                    </div>
+                </div>
+                <div class="media__item media__photo">
+                    <img src="band3.jpeg" alt="Not Your Girlfriend - Media 3">
+                    <div class="media__overlay">
+                        <span>Not Your Girlfriend - Media 3</span>
+                    </div>
+                </div>
+                <div class="media__item media__photo">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1749219409/pplx_project_search_images/14c21a1cb5a603a0cb072050ad4080f84f3ca653.jpg" alt="Silhouette of guitarist with dramatic lighting">
+                    <div class="media__overlay">
+                        <span>Guitar Solo</span>
+                    </div>
+                </div>
+                <div class="media__item media__photo">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1751056378/pplx_project_search_images/1b39f5d10eccef6ed79e16882ab45915c8eff907.jpg" alt="Concert crowd with raised hands">
+                    <div class="media__overlay">
+                        <span>Crowd Energy</span>
+                    </div>
+                </div>
+                <div class="media__item media__photo">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1749991820/pplx_project_search_images/21ac90e89913c6d4152481bb4e961b99ed1000e5.jpg" alt="Live performer engaging with audience">
+                    <div class="media__overlay">
+                        <span>Live Show</span>
+                    </div>
+                </div>
+                <div class="media__item media__video">
+                    <div class="video__placeholder">
+                        <div class="video__play-button">▶</div>
+                        <span>Live Performance Video</span>
+                    </div>
+                </div>
+                <div class="media__item media__video">
+                    <div class="video__placeholder">
+                        <div class="video__play-button">▶</div>
+                        <span>Behind the Scenes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section__title">Get in Touch</h2>
+            <div class="contact__content">
+                <div class="contact__form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact__info">
+                    <h3>Booking & Inquiries</h3>
+                    <p><strong>Email:</strong> booking@notyourgirlfriend.com</p>
+                    <p><strong>Phone:</strong> (555) 123-ROCK</p>
+                    <p><strong>Location:</strong> New York, NY</p>
+                    <div class="social__links">
+                        <a href="https://instagram.com/notyourgirlfriendnyc" target="_blank" class="social__link">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

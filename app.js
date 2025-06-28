@@ -111,39 +111,52 @@ function createTourCard(show) {
 // Contact form functionality
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
+    const statusElement = document.getElementById('form-status'); // Add this in your HTML
+
+    if (contactForm && statusElement) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Simulate form submission
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-            
+
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
-            
-            // Simulate API call delay
-            setTimeout(() => {
-                submitBtn.textContent = 'Message Sent!';
-                submitBtn.style.background = '#28a745';
-                
-                // Reset form
-                setTimeout(() => {
+
+            const formData = new FormData(contactForm);
+
+            // Use fetch to submit the form data
+            fetch(contactForm.action, {
+                method: contactForm.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    statusElement.textContent = "Thanks for your submission!";
                     contactForm.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                }, 2000);
-            }, 1500);
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            statusElement.textContent = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            statusElement.textContent = "Oops! There was a problem submitting your form";
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                statusElement.textContent = "Oops! There was a problem submitting your form";
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
 }
+
 
 // Media gallery functionality
 function initMediaGallery() {

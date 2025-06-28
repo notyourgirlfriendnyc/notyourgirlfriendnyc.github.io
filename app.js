@@ -134,6 +134,8 @@ function initContactForm() {
             })
             .then(response => {
                 if (response.ok) {
+                    submitBtn.textContent = 'Message Sent!';
+                    submitBtn.style.background = '#28a745';
                     statusElement.textContent = "Thanks for your submission!";
                     contactForm.reset();
                 } else {
